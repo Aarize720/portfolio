@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>À propos | Aarize</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/about.css">
+
+  <!-- Font Awesome pour les icônes réseaux -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+</head>
+<body>
+
+  <!-- Particles Background -->
+  <div id="particles-js"></div>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="/index.html">Accueil</a>
+    <a href="/about/">À propos</a>
+    <a href="/portfolio/">Portfolio</a>
+    <a href="/contact/">Contact</a>
+  </nav> 
+
+  <!-- Main Content -->
+  <div class="container glass">
+    <header>
+      <h1><span class="dev-tag">&lt;/&gt;</span> Qui suis-je ?</h1>
+    </header>
+
+    <section>
+      <p class="comment">// Un passionné de code depuis toujours</p>
+
+      <p>Je m'appelle <strong>Aarize</strong>, développeur <code>full stack</code> âgé de 16 ans.</p>
+
+      <p>
+        Je conçois des projets sur mesure allant de simples sites vitrines à des systèmes complexes
+        (espace client, dashboard, panel admin...). J’accorde une importance particulière à la
+        <strong>performance</strong>, la <strong>sécurité</strong> et l’<strong>UX design</strong>.
+      </p>
+
+      <p>
+        Mes stacks de prédilection sont :
+        <code>Java</code>, <code>Node.js</code>, <code>HTML</code>,
+        <code>CSS</code>, <code>C++</code>, <code>C#</code>
+        et <code>MySQL</code>.
+      </p>
+
+      <p>
+        Je maîtrise également des outils comme :
+        <code>Git</code>, <code>Docker</code>, <code>Pterodactyl</code>,
+        <code>Discord.js</code> et <code>WordPress</code> ainsi que la majorité des <code>CMS</code> reconnue.
+      </p>
+
+      <p>J’ai fondé deux structures distinctes :</p>
+      <ul>
+        <li><code>ElythiumDev</code> – Développement sur mesure (bots, panels, sites, outils)</li>
+        <li><code>ElythiumHeberg</code> – Hébergement de serveurs <code>Minecraft</code>, <code>bots Discord</code> et <code>sites web</code></li>
+      </ul>
+
+      <p>
+        En parallèle, je développe aussi des projets personnels que je présente dans mon
+        <code>portfolio</code> : expérimentation UI/UX, API, systèmes automatisés...
+      </p>
+
+      <p>
+        Mon objectif est clair :
+        livrer des projets <strong>solides</strong>, <strong>maintenables</strong> et <strong>visuellement propres</strong>.
+      </p>
+
+      <p class="comment">// Toujours apprendre, toujours construire</p>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div>© 2025 All rights reserved to Aaron LG</div>
+    <div class="social-icons">
+      <a href="https://twitter.com/aaronlg" target="_blank" rel="noopener" aria-label="Twitter">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="https://linkedin.com/in/aaronlg" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="https://github.com/aaronlg" target="_blank" rel="noopener" aria-label="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+  </footer>
+
+  <script src="/scripts/particles/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 80 },
+        "color": { "value": "#ffffff" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.5 },
+        "size": { "value": 3 },
+        "line_linked": {
+          "enable": true,
+          "distance": 150,
+          "color": "#ffffff",
+          "opacity": 0.4,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 6
+        }
+      },
+      "interactivity": {
+        "events": {
+          "onhover": { "enable": true, "mode": "repulse" }
+        }
+      },
+      "retina_detect": true
+    });
+  </script>
+</body>
+</html>

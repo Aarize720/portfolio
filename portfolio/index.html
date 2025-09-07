@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio | Aarize</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/portfolio.css">
+
+  <!-- Font Awesome pour icônes réseaux -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+</head>
+<body>
+
+  <div id="particles-js"></div>
+
+  <nav>
+    <a href="/index.html">Accueil</a>
+    <a href="/about/">À propos</a>
+    <a href="/portfolio/">Portfolio</a>
+    <a href="/contact/">Contact</a>
+  </nav> 
+
+  <div class="container glass">
+    <header>
+      <h1><span class="dev-tag">&lt;/&gt;</span> Mon portfolio</h1>
+    </header>
+
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">Tous</button>
+      <button class="filter-btn" data-filter="design">UX / UI Design</button>
+      <button class="filter-btn" data-filter="web">Développement Web</button>
+      <button class="filter-btn" data-filter="other">Autres</button>
+    </div>
+
+    <section id="projects">
+      <!-- Design -->
+      <div class="project design">
+        <h2><a href="#" target="_blank">Mon Portfolio</a></h2>
+        <p>Site personnel avec fond dynamique, navigation fluide et structure claire.</p>
+        <p><code>HTML</code>, <code>CSS</code>, <code>Particles.js</code></p>
+      </div>
+
+      <div class="project design">
+        <h2><a href="/projects/elythiumheberg.html" target="_blank">Site Web ElythiumHeberg</a></h2>
+        <p>Site vitrine avec navigation, page statut, tarifs, et design sobre.</p>
+        <p><code>HTML</code>, <code>CSS</code>, <code>UI Custom</code></p>
+      </div>
+
+      <!-- Web -->
+      <div class="project web">
+        <h2><a href="#" target="_blank">ElythiumDev</a></h2>
+        <p>Dév sur mesure : bots, sites, systèmes clients, outils techniques.</p>
+        <p><code>Java</code>, <code>Node.js</code>, <code>MySQL</code></p>
+      </div>
+
+      <div class="project other">
+        <h2><a href="#" target="_blank">Bot Discord Ticket</a></h2>
+        <p>Gestion des demandes support avec commandes, logs et permissions.</p>
+        <p><code>Python</code>, <code>discord.py</code></p>
+      </div>
+
+      <div class="project other">
+        <h2><a href="#" target="_blank">Bot Discord de Gestion</a></h2>
+        <p>Produit / utilisateur / staff liés à la base MySQL de EH.</p>
+        <p><code>Python</code>, <code>MySQL</code></p>
+      </div>
+
+      <div class="project web">
+        <h2><a href="#" target="_blank">Bot de Contrôle Pterodactyl</a></h2>
+        <p>Gestion des serveurs EH via l’API Ptero (restart, logs, etc).</p>
+        <p><code>Python</code>, <code>Pterodactyl API</code></p>
+      </div>
+
+      <!-- Autres -->
+      <div class="project other">
+        <h2><a href="#" target="_blank">Serveur Minecraft Eldernia</a></h2>
+        <p>RPG médiéval, map custom, plugins, lore, équipes & écosystème.</p>
+        <p><code>Paper</code>, <code>Java</code>, <code>MySQL</code></p>
+      </div>
+
+      <div class="project other">
+        <h2><a href="#" target="_blank">Serveur Minecraft The Earth</a></h2>
+        <p>Géopolitique sur map terre IRL, gestion économique & events.</p>
+        <p><code>Spigot</code>, <code>Java</code>, <code>Html</code></p>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div>© 2025 All rights reserved to Aaron LG</div>
+    <div class="social-icons">
+      <a href="https://twitter.com/aaronlg" target="_blank" rel="noopener" aria-label="Twitter">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="https://linkedin.com/in/aaronlg" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="https://github.com/aaronlg" target="_blank" rel="noopener" aria-label="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+  </footer>
+
+  <script src="/scripts/particles/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 80 },
+        "color": { "value": "#ffffff" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.5 },
+        "size": { "value": 3 },
+        "line_linked": {
+          "enable": true,
+          "distance": 150,
+          "color": "#ffffff",
+          "opacity": 0.4,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 6
+        }
+      },
+      "interactivity": {
+        "events": {
+          "onhover": { "enable": true, "mode": "repulse" }
+        }
+      },
+      "retina_detect": true
+    });
+  </script>
+  <script src="/scripts/portfolio.js"></script>
+</body>
+</html>

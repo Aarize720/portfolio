@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | Aarize</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/contact.css">
+
+  <!-- Font Awesome pour icônes réseaux -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+</head>
+<body>
+
+  <!-- Particles Background -->
+  <div id="particles-js"></div>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="/index.html">Accueil</a>
+    <a href="/about/">À propos</a>
+    <a href="/portfolio/">Portfolio</a>
+    <a href="/contact/">Contact</a>
+  </nav> 
+
+  <!-- Main Content -->
+  <div class="container glass">
+    <header>
+      <h1><span class="dev-tag">&lt;/&gt;</span> Contacte-moi</h1>
+    </header>
+
+    <section>
+      <p class="comment">// Tu as un projet ? Une question ?</p>
+      <p>Je suis disponible pour toute demande de collaboration, projet freelance ou renseignement.</p>
+
+      <div class="contact-info">
+        <div class="contact-item">
+          <strong>📧 Email :</strong> <a href="mailto:contact@aarize.dev">contact@aarize.dev</a>
+        </div>
+        <div class="contact-item">
+          <strong>💬 Discord :</strong> Aarize
+        </div>
+        <div class="contact-item">
+          <strong>🌐 Site :</strong> <a href="https://aarize.dev" target="_blank" rel="noopener">aarize.dev</a>
+        </div>
+      </div>
+
+      <p class="comment">// Ou utilise ce formulaire pour m'envoyer un message directement :</p>
+
+      <div class="contact-form-wrapper">
+        <form action="https://formspree.io/f/mrbknvvp" method="POST" class="contact-form">
+          <div class="form-group">
+            <label for="name">Nom complet</label>
+            <input type="text" id="name" name="name" placeholder="Votre nom" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Adresse e-mail</label>
+            <input type="email" id="email" name="email" placeholder="votre.email@example.com" required />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Votre message..." required></textarea>
+          </div>
+
+          <button type="submit">Envoyer</button>
+        </form>
+      </div>
+
+      <p class="comment">// Je réponds rapidement, avec sérieux et passion.</p>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div>© 2025 All rights reserved to Aaron LG</div>
+    <div class="social-icons">
+      <a href="https://twitter.com/aaronlg" target="_blank" rel="noopener" aria-label="Twitter">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="https://linkedin.com/in/aaronlg" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="https://github.com/aaronlg" target="_blank" rel="noopener" aria-label="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+  </footer>
+
+  <script src="/scripts/particles/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 80 },
+        "color": { "value": "#ffffff" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.5 },
+        "size": { "value": 3 },
+        "line_linked": {
+          "enable": true,
+          "distance": 150,
+          "color": "#ffffff",
+          "opacity": 0.4,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 6
+        }
+      },
+      "interactivity": {
+        "events": {
+          "onhover": { "enable": true, "mode": "repulse" }
+        }
+      },
+      "retina_detect": true
+    });
+  </script>
+</body>
+</html>

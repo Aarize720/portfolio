@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ElythiumHeberg | Détails</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/elythiumheberg.css">
+
+  <!-- Font Awesome pour icônes réseaux -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+</head>
+<body>
+  <div id="particles-js"></div>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="../index.html">Accueil</a>
+    <a href="../portfolio.html">Portfolio</a>
+  </nav>
+
+  <div class="container glass">
+    <header>
+      <h1><span class="dev-tag">&lt;/&gt;</span> ElythiumHeberg</h1>
+      <p class="subtitle">Hébergement Minecraft, web & bots Discord</p>
+    </header>
+
+    <section>
+      <h2>Description</h2>
+      <p>ElythiumHeberg est une plateforme d’hébergement dédiée aux serveurs Minecraft, sites web et bots Discord. Elle inclut un panel Pterodactyl personnalisé, un espace client intégré et des systèmes d’automatisation.</p>
+
+      <h2>Technologies</h2>
+      <ul>
+        <li><code>Node.js</code> &middot; Backend API</li>
+        <li><code>Pterodactyl API</code> &middot; Gestion serveurs</li>
+        <li><code>MySQL</code> &middot; Stockage</li>
+        <li><code>CSS responsive</code> &middot; UI moderne</li>
+      </ul>
+
+      <h2>Captures d’écran</h2>
+      <!-- Ajoute tes images ici -->
+      <!-- <img src="..." alt="Capture ElythiumHeberg" /> -->
+
+      <h2>Lien</h2>
+      <p><a href="https://elythiumheberg.fr" target="_blank" rel="noopener">Accéder au site</a></p>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div>© 2025 All rights reserved to Aaron LG</div>
+    <div class="social-icons">
+      <a href="https://twitter.com/aaronlg" target="_blank" rel="noopener" aria-label="Twitter">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="https://linkedin.com/in/aaronlg" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="https://github.com/aaronlg" target="_blank" rel="noopener" aria-label="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+  </footer>
+
+  <script src="/scripts/particles/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      "particles": { 
+        "number": { "value": 80 }, 
+        "color": { "value": "#ffffff" }, 
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.5 }, 
+        "size": { "value": 3 },
+        "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.4, "width": 1 },
+        "move": { "enable": true, "speed": 6 }
+      },
+      "interactivity": { "events": { "onhover": { "enable": true, "mode": "repulse" } } },
+      "retina_detect": true
+    });
+  </script>
+</body>
+</html>
