@@ -20,6 +20,20 @@ const observer = new IntersectionObserver(entries => {
 
 animatedElements.forEach(el => observer.observe(el));
 
+// === Nouvelles animations pour les éléments spéciaux ===
+const fadeElements = document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right');
+
+const fadeObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      fadeObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+fadeElements.forEach(el => fadeObserver.observe(el));
+
 // === Loader de page ===
 
 window.addEventListener("load", () => {

@@ -212,4 +212,231 @@ a:hover {
 
 .site-footer .social-icons a:hover {
   color: #8b5cf6;
+  background: rgba(139, 92, 246, 0.1);
+  transform: translateY(-2px);
+}
+
+/* === Améliorations du formulaire === */
+.enhanced-form .form-group {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.enhanced-form input,
+.enhanced-form textarea,
+.enhanced-form select {
+  width: 100%;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1rem;
+  color: #fff;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.enhanced-form input:focus,
+.enhanced-form textarea:focus,
+.enhanced-form select:focus {
+  border-color: #8b5cf6;
+  background: rgba(139, 92, 246, 0.05);
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+}
+
+.enhanced-form .form-floating-label {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  color: #777;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  background: transparent;
+  padding: 0 5px;
+  font-size: 1rem;
+}
+
+.enhanced-form input:focus + .form-floating-label,
+.enhanced-form input:not(:placeholder-shown) + .form-floating-label,
+.enhanced-form textarea:focus + .form-floating-label,
+.enhanced-form textarea:not(:placeholder-shown) + .form-floating-label {
+  top: -8px;
+  left: 10px;
+  font-size: 0.85rem;
+  color: #8b5cf6;
+  background: #0f0f0f;
+}
+
+.enhanced-form select {
+  cursor: pointer;
+}
+
+.enhanced-form select option {
+  background: #0f0f0f;
+  color: #fff;
+  padding: 10px;
+}
+
+/* États de validation */
+.form-group.error input,
+.form-group.error textarea,
+.form-group.error select {
+  border-color: #ef4444;
+  background: rgba(239, 68, 68, 0.05);
+}
+
+.form-group.error .form-floating-label {
+  color: #ef4444;
+}
+
+.form-group.success input,
+.form-group.success textarea,
+.form-group.success select {
+  border-color: #10b981;
+  background: rgba(16, 185, 129, 0.05);
+}
+
+.form-group.success .form-floating-label {
+  color: #10b981;
+}
+
+.field-error {
+  color: #ef4444;
+  font-size: 0.85rem;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.field-error::before {
+  content: '⚠';
+}
+
+/* Bouton d'envoi amélioré */
+.submit-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #8b5cf6, #6f42c1);
+  color: white;
+  padding: 15px 0;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.submit-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #6f42c1, #553c9a);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(139, 92, 246, 0.4);
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-loading {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Animation de succès du formulaire */
+.contact-form.success-animation {
+  animation: successPulse 2s ease;
+}
+
+@keyframes successPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+
+/* Informations de contact améliorées */
+.contact-info {
+  display: grid;
+  gap: 15px;
+  margin: 30px 0;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.contact-item:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(139, 92, 246, 0.3);
+  transform: translateY(-2px);
+}
+
+.contact-copy-btn {
+  background: rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  color: #8b5cf6;
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.contact-copy-btn:hover {
+  background: #8b5cf6;
+  color: white;
+  transform: scale(1.05);
+}
+
+.contact-copy-btn.copied {
+  background: #10b981;
+  border-color: #10b981;
+  color: white;
+}
+
+/* Responsive pour les améliorations */
+@media (max-width: 768px) {
+  .contact-form-wrapper {
+    padding: 20px;
+  }
+  
+  .enhanced-form input,
+  .enhanced-form textarea,
+  .enhanced-form select {
+    padding: 12px;
+  }
+  
+  .enhanced-form .form-floating-label {
+    top: 12px;
+    left: 12px;
+  }
+  
+  .enhanced-form input:focus + .form-floating-label,
+  .enhanced-form input:not(:placeholder-shown) + .form-floating-label,
+  .enhanced-form textarea:focus + .form-floating-label,
+  .enhanced-form textarea:not(:placeholder-shown) + .form-floating-label {
+    left: 8px;
+  }
+  
+  .contact-item {
+    padding: 12px 15px;
+  }
+  
+  .contact-copy-btn {
+    padding: 6px 8px;
+    font-size: 0.8rem;
+  }
 }

@@ -6,6 +6,7 @@
   <title>Contact | Aarize</title>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles/contact.css">
+  <link rel="stylesheet" href="../styles/enhancements.css">
 
   <!-- Font Awesome pour icônes réseaux -->
   <link
@@ -20,10 +21,10 @@
 
   <!-- Navigation -->
   <nav>
-    <a href="/index.html">Accueil</a>
-    <a href="/about/">À propos</a>
-    <a href="/portfolio/">Portfolio</a>
-    <a href="/contact/">Contact</a>
+    <a href="../index.html">Accueil</a>
+    <a href="../about/index.html">À propos</a>
+    <a href="../portfolio/index.html">Portfolio</a>
+    <a href="index.html">Contact</a>
   </nav> 
 
   <!-- Main Content -->
@@ -51,23 +52,38 @@
       <p class="comment">// Ou utilise ce formulaire pour m'envoyer un message directement :</p>
 
       <div class="contact-form-wrapper">
-        <form action="https://formspree.io/f/mrbknvvp" method="POST" class="contact-form">
+        <form action="https://formspree.io/f/mrbknvvp" method="POST" class="contact-form enhanced-form" id="contact-form">
           <div class="form-group">
-            <label for="name">Nom complet</label>
-            <input type="text" id="name" name="name" placeholder="Votre nom" required />
+            <input type="text" id="name" name="name" placeholder=" " required />
+            <label for="name" class="form-floating-label">Nom complet</label>
           </div>
 
           <div class="form-group">
-            <label for="email">Adresse e-mail</label>
-            <input type="email" id="email" name="email" placeholder="votre.email@example.com" required />
+            <input type="email" id="email" name="email" placeholder=" " required />
+            <label for="email" class="form-floating-label">Adresse e-mail</label>
           </div>
 
           <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="Votre message..." required></textarea>
+            <select id="subject" name="subject" required>
+              <option value="">Choisir un sujet</option>
+              <option value="projet">Nouveau projet</option>
+              <option value="collaboration">Collaboration</option>
+              <option value="question">Question générale</option>
+              <option value="autre">Autre</option>
+            </select>
           </div>
 
-          <button type="submit">Envoyer</button>
+          <div class="form-group">
+            <textarea id="message" name="message" rows="5" placeholder=" " required></textarea>
+            <label for="message" class="form-floating-label">Votre message</label>
+          </div>
+
+          <button type="submit" class="submit-btn">
+            <span class="btn-text">Envoyer le message</span>
+            <span class="btn-loading" style="display: none;">
+              <i class="fas fa-spinner fa-spin"></i> Envoi...
+            </span>
+          </button>
         </form>
       </div>
 
@@ -92,6 +108,8 @@
   </footer>
 
   <script src="../scripts/particles/particles.min.js"></script>
+  <script src="../scripts/theme-switcher.js"></script>
+  <script src="../scripts/contact-form.js"></script>
   <script>
     particlesJS("particles-js", {
       "particles": {

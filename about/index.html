@@ -3,9 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>À propos | Aarize</title>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+  <meta name="description" content="Découvrez qui est Aarize, développeur polyvalent de 16 ans spécialisé en Java, Node.js, C++, C# et MySQL. Fondateur d'ElythiumDev et ElythiumHeberg."/>
+  <meta name="keywords" content="Aarize, développeur, polyvalent, Java, Node.js, C++, C#, MySQL, ElythiumDev, ElythiumHeberg, à propos"/>
+  <meta name="author" content="Aaron LG (Aarize)"/>
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aarize.dev/about">
+  <meta property="og:title" content="À propos | Aarize - Développeur Polyvalent">
+  <meta property="og:description" content="Découvrez qui est Aarize, développeur polyvalent de 16 ans spécialisé en Java, Node.js, C++, C# et MySQL.">
+  <meta property="og:image" content="https://aarize.dev/assets/og-image.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://aarize.dev/about">
+  <meta property="twitter:title" content="À propos | Aarize - Développeur Polyvalent">
+  <meta property="twitter:description" content="Découvrez qui est Aarize, développeur polyvalent de 16 ans spécialisé en Java, Node.js, C++, C# et MySQL.">
+  <meta property="twitter:image" content="https://aarize.dev/assets/og-image.jpg">
+  
+  <title>À propos | Aarize - Développeur Polyvalent</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles/about.css">
+  <link rel="stylesheet" href="../styles/enhancements.css">
 
   <!-- Font Awesome pour les icônes réseaux -->
   <link
@@ -15,65 +34,218 @@
 </head>
 <body>
 
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress"></div>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop" aria-label="Retour en haut">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Toast Notifications -->
+  <div class="toast-container" id="toastContainer"></div>
+
   <!-- Particles Background -->
   <div id="particles-js"></div>
 
   <!-- Navigation -->
-  <nav>
-    <a href="/index.html">Accueil</a>
-    <a href="/about/">À propos</a>
-    <a href="/portfolio/">Portfolio</a>
-    <a href="/contact/">Contact</a>
-  </nav> 
+  <nav class="main-nav">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-link">
+        <i class="fas fa-home"></i>
+        <span>Accueil</span>
+      </a>
+      <a href="index.html" class="nav-link active">
+        <i class="fas fa-user"></i>
+        <span>À propos</span>
+      </a>
+      <a href="../portfolio/index.html" class="nav-link">
+        <i class="fas fa-briefcase"></i>
+        <span>Portfolio</span>
+      </a>
+      <a href="../contact/index.html" class="nav-link">
+        <i class="fas fa-envelope"></i>
+        <span>Contact</span>
+      </a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Changer de thème">
+        <i class="fas fa-sun"></i>
+      </button>
+    </div>
+  </nav>
 
   <!-- Main Content -->
-  <div class="container glass">
-    <header>
-      <h1><span class="dev-tag">&lt;/&gt;</span> Qui suis-je ?</h1>
-    </header>
+  <div class="container">
+    <div class="hero-section glass fade-in">
+      <div class="profile-header">
+        <div class="profile-avatar">
+          <i class="fas fa-code"></i>
+        </div>
+        <div class="profile-info">
+          <h1 class="gradient-text">
+            <span class="dev-tag">&lt;/&gt;</span> Qui suis-je ?
+          </h1>
+          <div class="status-indicator">
+            <span class="status-dot"></span>
+            <span class="status-text">Disponible pour projets</span>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <section>
-      <p class="comment">// Un passionné de code depuis toujours</p>
+    <!-- About Stats -->
+    <div class="stats-grid fade-in">
+      <div class="stat-card glass">
+        <div class="stat-icon">
+          <i class="fas fa-calendar-alt"></i>
+        </div>
+        <div class="stat-content">
+          <div class="stat-number" data-target="3">0</div>
+          <div class="stat-label">Années d'expérience</div>
+        </div>
+      </div>
+      <div class="stat-card glass">
+        <div class="stat-icon">
+          <i class="fas fa-project-diagram"></i>
+        </div>
+        <div class="stat-content">
+          <div class="stat-number" data-target="50">0</div>
+          <div class="stat-label">Projets réalisés</div>
+        </div>
+      </div>
+      <div class="stat-card glass">
+        <div class="stat-icon">
+          <i class="fas fa-code-branch"></i>
+        </div>
+        <div class="stat-content">
+          <div class="stat-number" data-target="8">0</div>
+          <div class="stat-label">Technologies maîtrisées</div>
+        </div>
+      </div>
+      <div class="stat-card glass">
+        <div class="stat-icon">
+          <i class="fas fa-building"></i>
+        </div>
+        <div class="stat-content">
+          <div class="stat-number" data-target="2">0</div>
+          <div class="stat-label">Entreprises fondées</div>
+        </div>
+      </div>
+    </div>
 
-      <p>Je m'appelle <strong>Aarize</strong>, développeur <code>Polyvalent</code> âgé de 16 ans.</p>
+    <!-- About Content -->
+    <div class="about-content glass fade-in">
+      <div class="intro-section">
+        <p class="comment">// Un passionné de code depuis toujours</p>
+        <p class="intro-text">
+          Je m'appelle <strong class="highlight">Aarize</strong>, développeur 
+          <code class="tech-tag">Polyvalent</code> âgé de 16 ans.
+        </p>
+      </div>
 
-      <p>
-        Je conçois des projets sur mesure allant de simples sites vitrines à des systèmes complexes
-        (espace client, dashboard, panel admin...). J’accorde une importance particulière à la
-        <strong>performance</strong>, la <strong>sécurité</strong> et l’<strong>UX design</strong>.
-      </p>
+      <div class="description-section">
+        <p>
+          Je conçois des projets sur mesure allant de simples sites vitrines à des systèmes complexes
+          (espace client, dashboard, panel admin...). J'accorde une importance particulière à la
+          <strong class="highlight">performance</strong>, la <strong class="highlight">sécurité</strong> 
+          et l'<strong class="highlight">UX design</strong>.
+        </p>
+      </div>
 
-      <p>
-        Mes stacks de prédilection sont :
-        <code>Java</code>, <code>Node.js</code>, <code>HTML</code>,
-        <code>CSS</code>, <code>C++</code>, <code>C#</code>
-        et <code>MySQL</code>.
-      </p>
+      <!-- Tech Stack -->
+      <div class="tech-section">
+        <h3><i class="fas fa-tools"></i> Stack Technique</h3>
+        <div class="tech-grid">
+          <div class="tech-category">
+            <h4>Langages</h4>
+            <div class="tech-tags">
+              <span class="tech-tag advanced">Java</span>
+              <span class="tech-tag advanced">Node.js</span>
+              <span class="tech-tag intermediate">C++</span>
+              <span class="tech-tag intermediate">C#</span>
+              <span class="tech-tag advanced">HTML/CSS</span>
+            </div>
+          </div>
+          <div class="tech-category">
+            <h4>Base de données</h4>
+            <div class="tech-tags">
+              <span class="tech-tag advanced">MySQL</span>
+              <span class="tech-tag intermediate">MongoDB</span>
+              <span class="tech-tag beginner">PostgreSQL</span>
+            </div>
+          </div>
+          <div class="tech-category">
+            <h4>Outils & Frameworks</h4>
+            <div class="tech-tags">
+              <span class="tech-tag advanced">Git</span>
+              <span class="tech-tag intermediate">Docker</span>
+              <span class="tech-tag advanced">Discord.js</span>
+              <span class="tech-tag intermediate">WordPress</span>
+              <span class="tech-tag advanced">Pterodactyl</span>
+            </div>
+          </div>
+        </div>
+      </div>
 
-      <p>
-        Je maîtrise également des outils comme :
-        <code>Git</code>, <code>Docker</code>, <code>Pterodactyl</code>,
-        <code>Discord.js</code> et <code>WordPress</code> ainsi que la majorité des <code>CMS</code> reconnue.
-      </p>
+      <!-- Companies -->
+      <div class="companies-section">
+        <h3><i class="fas fa-rocket"></i> Mes Entreprises</h3>
+        <div class="companies-grid">
+          <div class="company-card">
+            <div class="company-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <div class="company-info">
+              <h4>ElythiumDev</h4>
+              <p>Développement sur mesure : bots, panels, sites web et outils techniques</p>
+              <div class="company-tags">
+                <span class="tag">Développement</span>
+                <span class="tag">Sur mesure</span>
+              </div>
+            </div>
+          </div>
+          <div class="company-card">
+            <div class="company-icon">
+              <i class="fas fa-server"></i>
+            </div>
+            <div class="company-info">
+              <h4>ElythiumHeberg</h4>
+              <p>Hébergement de serveurs Minecraft, bots Discord et sites web</p>
+              <div class="company-tags">
+                <span class="tag">Hébergement</span>
+                <span class="tag">Gaming</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-      <p>J’ai fondé deux structures distinctes :</p>
-      <ul>
-        <li><code>ElythiumDev</code> – Développement sur mesure (bots, panels, sites, outils)</li>
-        <li><code>ElythiumHeberg</code> – Hébergement de serveurs <code>Minecraft</code>, <code>bots Discord</code> et <code>sites web</code></li>
-      </ul>
+      <!-- Philosophy -->
+      <div class="philosophy-section">
+        <h3><i class="fas fa-lightbulb"></i> Ma Philosophie</h3>
+        <div class="philosophy-content">
+          <p>
+            En parallèle, je développe aussi des projets personnels que je présente dans mon
+            <code class="tech-tag">portfolio</code> : expérimentation UI/UX, API, systèmes automatisés...
+          </p>
+          <div class="objectives">
+            <div class="objective">
+              <i class="fas fa-check-circle"></i>
+              <span>Projets <strong class="highlight">solides</strong></span>
+            </div>
+            <div class="objective">
+              <i class="fas fa-check-circle"></i>
+              <span>Code <strong class="highlight">maintenable</strong></span>
+            </div>
+            <div class="objective">
+              <i class="fas fa-check-circle"></i>
+              <span>Design <strong class="highlight">visuellement propre</strong></span>
+            </div>
+          </div>
+        </div>
+      </div>
 
-      <p>
-        En parallèle, je développe aussi des projets personnels que je présente dans mon
-        <code>portfolio</code> : expérimentation UI/UX, API, systèmes automatisés...
-      </p>
-
-      <p>
-        Mon objectif est clair :
-        livrer des projets <strong>solides</strong>, <strong>maintenables</strong> et <strong>visuellement propres</strong>.
-      </p>
-
-      <p class="comment">// Toujours apprendre, toujours construire</p>
-    </section>
+      <p class="comment closing-comment">// Toujours apprendre, toujours construire</p>
+    </div>
   </div>
 
   <!-- Footer -->
@@ -93,6 +265,8 @@
   </footer>
 
   <script src="../scripts/particles/particles.min.js"></script>
+  <script src="../scripts/theme-switcher.js"></script>
+  <script src="../scripts/animation.js"></script>
   <script>
     particlesJS("particles-js", {
       "particles": {

@@ -1,0 +1,435 @@
+/* === Variables CSS pour les thèmes === */
+:root {
+  --bg-primary: #0f0f0f;
+  --bg-secondary: rgba(255, 255, 255, 0.04);
+  --bg-tertiary: rgba(255, 255, 255, 0.02);
+  --text-primary: #ffffff;
+  --text-secondary: #cccccc;
+  --text-muted: #777777;
+  --accent-primary: #8b5cf6;
+  --accent-secondary: #9be7ff;
+  --border-primary: rgba(255, 255, 255, 0.1);
+  --border-secondary: rgba(255, 255, 255, 0.05);
+  --shadow-primary: rgba(139, 92, 246, 0.2);
+  --shadow-secondary: rgba(139, 92, 246, 0.3);
+}
+
+[data-theme="light"] {
+  --bg-primary: #ffffff;
+  --bg-secondary: rgba(0, 0, 0, 0.04);
+  --bg-tertiary: rgba(0, 0, 0, 0.02);
+  --text-primary: #1a1a1a;
+  --text-secondary: #333333;
+  --text-muted: #666666;
+  --accent-primary: #6f42c1;
+  --accent-secondary: #0066cc;
+  --border-primary: rgba(0, 0, 0, 0.1);
+  --border-secondary: rgba(0, 0, 0, 0.05);
+  --shadow-primary: rgba(111, 66, 193, 0.2);
+  --shadow-secondary: rgba(111, 66, 193, 0.3);
+}
+
+/* === Bouton de changement de thème === */
+.theme-toggle {
+  position: relative;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-primary);
+  border-radius: 50px;
+  width: 50px;
+  height: 26px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 20px;
+}
+
+.theme-toggle:hover {
+  background: var(--accent-primary);
+  transform: scale(1.05);
+}
+
+.theme-toggle .sun-icon,
+.theme-toggle .moon-icon {
+  position: absolute;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  color: var(--text-primary);
+}
+
+.theme-toggle .sun-icon {
+  opacity: 0;
+  transform: rotate(180deg);
+}
+
+.theme-toggle .moon-icon {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+.theme-toggle.light-mode .sun-icon {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+.theme-toggle.light-mode .moon-icon {
+  opacity: 0;
+  transform: rotate(-180deg);
+}
+
+/* === Barre de progression de scroll === */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--bg-secondary);
+  z-index: 9998;
+  transition: opacity 0.3s ease;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+  width: 0%;
+  transition: width 0.1s ease;
+  box-shadow: 0 0 10px var(--shadow-primary);
+}
+
+/* === Notifications Toast === */
+#toast-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.toast {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-primary);
+  border-radius: 12px;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 300px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 5px 20px var(--shadow-primary);
+  transform: translateX(400px);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.toast.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.toast.hide {
+  transform: translateX(400px);
+  opacity: 0;
+}
+
+.toast-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-primary);
+}
+
+.toast-success {
+  border-left: 4px solid #10b981;
+}
+
+.toast-error {
+  border-left: 4px solid #ef4444;
+}
+
+.toast-warning {
+  border-left: 4px solid #f59e0b;
+}
+
+.toast-info {
+  border-left: 4px solid var(--accent-primary);
+}
+
+.toast-close {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.toast-close:hover {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+/* === Boutons de copie pour le code === */
+.code-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.copy-btn {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: var(--accent-primary);
+  border: none;
+  border-radius: 4px;
+  color: white;
+  padding: 4px 6px;
+  font-size: 10px;
+  cursor: pointer;
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.code-wrapper:hover .copy-btn {
+  opacity: 1;
+}
+
+.copy-btn:hover {
+  background: var(--accent-secondary);
+  transform: scale(1.1);
+}
+
+.copy-btn.copied {
+  background: #10b981;
+}
+
+/* === Bouton retour en haut === */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: var(--accent-primary);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  box-shadow: 0 5px 15px var(--shadow-primary);
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background: var(--accent-secondary);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px var(--shadow-secondary);
+}
+
+/* === Améliorations des cartes === */
+.enhanced-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.enhanced-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.enhanced-card:hover::before {
+  left: 100%;
+}
+
+/* === Indicateurs de statut === */
+.status-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.status-online {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.status-busy {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.status-away {
+  background: rgba(245, 158, 11, 0.1);
+  color: #f59e0b;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.status-indicator::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* === Améliorations des formulaires === */
+.enhanced-form .form-group {
+  position: relative;
+}
+
+.enhanced-form .form-floating-label {
+  position: absolute;
+  top: 12px;
+  left: 15px;
+  color: var(--text-muted);
+  transition: all 0.3s ease;
+  pointer-events: none;
+  background: var(--bg-primary);
+  padding: 0 5px;
+}
+
+.enhanced-form input:focus + .form-floating-label,
+.enhanced-form input:not(:placeholder-shown) + .form-floating-label,
+.enhanced-form textarea:focus + .form-floating-label,
+.enhanced-form textarea:not(:placeholder-shown) + .form-floating-label {
+  top: -8px;
+  font-size: 0.85rem;
+  color: var(--accent-primary);
+}
+
+/* === Animations d'apparition améliorées === */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: all 0.6s ease;
+}
+
+.fade-in-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fade-in-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: all 0.6s ease;
+}
+
+.fade-in-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* === Responsive Design === */
+@media (max-width: 768px) {
+  .theme-toggle {
+    width: 40px;
+    height: 22px;
+    margin-left: 10px;
+  }
+  
+  .theme-toggle .sun-icon,
+  .theme-toggle .moon-icon {
+    font-size: 12px;
+  }
+  
+  #toast-container {
+    top: 10px;
+    right: 10px;
+    left: 10px;
+  }
+  
+  .toast {
+    min-width: auto;
+    width: 100%;
+  }
+  
+  .back-to-top {
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    font-size: 16px;
+  }
+}
+
+/* === Améliorations des particules === */
+#particles-js {
+  transition: opacity 0.3s ease;
+}
+
+[data-theme="light"] #particles-js {
+  opacity: 0.3;
+}
+
+/* === Curseur personnalisé === */
+.custom-cursor {
+  cursor: none;
+}
+
+.cursor-dot {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background: var(--accent-primary);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.1s ease;
+}
+
+.cursor-outline {
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  border: 2px solid var(--accent-primary);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transition: all 0.1s ease;
+  opacity: 0.5;
+}

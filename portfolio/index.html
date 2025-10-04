@@ -3,11 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portfolio | Aarize</title>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles/portfolio.css">
+  <meta name="description" content="Découvrez le portfolio d'Aarize : 7 projets innovants incluant applications web, systèmes de gestion, bots Discord et solutions d'hébergement. Expertise en développement full-stack."/>
+  <meta name="keywords" content="portfolio, projets, développement web, applications, systèmes, innovation, full-stack"/>
+  <meta name="author" content="Aaron LG (Aarize)"/>
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aarize.dev/portfolio">
+  <meta property="og:title" content="Portfolio | Aarize - Mes Projets et Réalisations">
+  <meta property="og:description" content="Découvrez 7 projets innovants : applications web, systèmes de gestion, bots Discord et solutions d'hébergement.">
+  <meta property="og:image" content="https://aarize.dev/assets/og-image.jpg">
 
-  <!-- Font Awesome pour icônes réseaux -->
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://aarize.dev/portfolio">
+  <meta property="twitter:title" content="Portfolio | Aarize - Mes Projets et Réalisations">
+  <meta property="twitter:description" content="Découvrez 7 projets innovants : applications web, systèmes de gestion, bots Discord et solutions d'hébergement.">
+  <meta property="twitter:image" content="https://aarize.dev/assets/og-image.jpg">
+  
+  <title>Portfolio | Aarize - Mes Projets et Réalisations</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/portfolio.css">
+  <link rel="stylesheet" href="../styles/enhancements.css">
+
+  <!-- Font Awesome pour icônes -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -15,78 +34,357 @@
 </head>
 <body>
 
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress"></div>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop" aria-label="Retour en haut">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Toast Notifications -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Particles Background -->
   <div id="particles-js"></div>
 
-  <nav>
-    <a href="/index.html">Accueil</a>
-    <a href="/about/">À propos</a>
-    <a href="/portfolio/">Portfolio</a>
-    <a href="/contact/">Contact</a>
-  </nav> 
+  <!-- Navigation -->
+  <nav class="main-nav">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-link">
+        <i class="fas fa-home"></i>
+        <span>Accueil</span>
+      </a>
+      <a href="../about/index.html" class="nav-link">
+        <i class="fas fa-user"></i>
+        <span>À propos</span>
+      </a>
+      <a href="index.html" class="nav-link active">
+        <i class="fas fa-briefcase"></i>
+        <span>Portfolio</span>
+      </a>
+      <a href="../contact/index.html" class="nav-link">
+        <i class="fas fa-envelope"></i>
+        <span>Contact</span>
+      </a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Changer de thème">
+        <i class="fas fa-sun"></i>
+      </button>
+    </div>
+  </nav>
 
-  <div class="container glass">
-    <header>
-      <h1><span class="dev-tag">&lt;/&gt;</span> Mon portfolio</h1>
-    </header>
-
-    <div class="filters">
-      <button class="filter-btn active" data-filter="all">Tous</button>
-      <button class="filter-btn" data-filter="design">UX / UI Design</button>
-      <button class="filter-btn" data-filter="web">Développement Web</button>
-      <button class="filter-btn" data-filter="other">Autres</button>
+  <!-- Main Content -->
+  <div class="container">
+    <!-- Hero Section -->
+    <div class="hero-section glass fade-in">
+      <div class="hero-content">
+        <h1 class="gradient-text">
+          <span class="dev-tag">&lt;/&gt;</span> Mon Portfolio
+        </h1>
+        <p class="hero-description">
+          Découvrez mes 7 projets les plus innovants, alliant créativité technique et solutions pratiques
+        </p>
+        <div class="portfolio-stats">
+          <div class="portfolio-stat">
+            <span class="stat-number" data-target="7">0</span>
+            <span class="stat-label">Projets</span>
+          </div>
+          <div class="portfolio-stat">
+            <span class="stat-number" data-target="12">0</span>
+            <span class="stat-label">Technologies</span>
+          </div>
+          <div class="portfolio-stat">
+            <span class="stat-number" data-target="100">0</span>
+            <span class="stat-label">% Satisfaction</span>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <section id="projects">
-      <!-- Design -->
-      <div class="project design">
-        <h2><a href="#" target="_blank">Mon Portfolio</a></h2>
-        <p>Site personnel avec fond dynamique, navigation fluide et structure claire.</p>
-        <p><code>HTML</code>, <code>CSS</code>, <code>Particles.js</code></p>
+    <!-- Filters -->
+    <div class="filters-section fade-in">
+      <div class="filters-container glass">
+        <h3><i class="fas fa-filter"></i> Filtrer par catégorie</h3>
+        <div class="filters">
+          <button class="filter-btn active" data-filter="all">
+            <i class="fas fa-th"></i>
+            <span>Tous</span>
+          </button>
+          <button class="filter-btn" data-filter="web">
+            <i class="fas fa-globe"></i>
+            <span>Web</span>
+          </button>
+          <button class="filter-btn" data-filter="system">
+            <i class="fas fa-cogs"></i>
+            <span>Systèmes</span>
+          </button>
+          <button class="filter-btn" data-filter="bot">
+            <i class="fab fa-discord"></i>
+            <span>Bots</span>
+          </button>
+          <button class="filter-btn" data-filter="game">
+            <i class="fas fa-gamepad"></i>
+            <span>Gaming</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Projects Grid -->
+    <section id="projects" class="projects-grid fade-in">
+      
+      <!-- Projet 1: Plateforme E-commerce -->
+      <div class="project-card glass web" data-category="web">
+        <div class="project-header">
+          <div class="project-icon">
+            <i class="fas fa-shopping-cart"></i>
+          </div>
+          <div class="project-status">
+            <span class="status-badge completed">Terminé</span>
+          </div>
+        </div>
+        <div class="project-content">
+          <h3>Plateforme E-commerce Avancée</h3>
+          <p>Système complet de vente en ligne avec gestion des stocks, paiements sécurisés, tableau de bord admin et analytics en temps réel.</p>
+          <div class="project-features">
+            <span class="feature"><i class="fas fa-check"></i> Paiements Stripe</span>
+            <span class="feature"><i class="fas fa-check"></i> Dashboard Admin</span>
+            <span class="feature"><i class="fas fa-check"></i> Analytics</span>
+          </div>
+          <div class="tech-stack">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">MongoDB</span>
+            <span class="tech-tag">Stripe</span>
+          </div>
+        </div>
+        <div class="project-footer">
+          <a href="#" class="project-link" target="_blank">
+            <i class="fas fa-external-link-alt"></i>
+            Voir le projet
+          </a>
+          <a href="#" class="github-link" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
       </div>
 
-      <div class="project design">
-        <h2><a href="/projects/elythiumheberg.html" target="_blank">Site Web ElythiumHeberg</a></h2>
-        <p>Site vitrine avec navigation, page statut, tarifs, et design sobre.</p>
-        <p><code>HTML</code>, <code>CSS</code>, <code>UI Custom</code></p>
+      <!-- Projet 2: Système de Gestion RH -->
+      <div class="project-card glass system" data-category="system">
+        <div class="project-header">
+          <div class="project-icon">
+            <i class="fas fa-users-cog"></i>
+          </div>
+          <div class="project-status">
+            <span class="status-badge completed">Terminé</span>
+          </div>
+        </div>
+        <div class="project-content">
+          <h3>Système de Gestion RH</h3>
+          <p>Application complète pour la gestion des employés, planning, congés, évaluations et génération automatique de rapports.</p>
+          <div class="project-features">
+            <span class="feature"><i class="fas fa-check"></i> Gestion employés</span>
+            <span class="feature"><i class="fas fa-check"></i> Planning automatique</span>
+            <span class="feature"><i class="fas fa-check"></i> Rapports PDF</span>
+          </div>
+          <div class="tech-stack">
+            <span class="tech-tag">Vue.js</span>
+            <span class="tech-tag">Laravel</span>
+            <span class="tech-tag">MySQL</span>
+            <span class="tech-tag">PDF.js</span>
+          </div>
+        </div>
+        <div class="project-footer">
+          <a href="#" class="project-link" target="_blank">
+            <i class="fas fa-external-link-alt"></i>
+            Voir le projet
+          </a>
+          <a href="#" class="github-link" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
       </div>
 
-      <!-- Web -->
-      <div class="project web">
-        <h2><a href="#" target="_blank">ElythiumDev</a></h2>
-        <p>Dév sur mesure : bots, sites, systèmes clients, outils techniques.</p>
-        <p><code>Java</code>, <code>Node.js</code>, <code>MySQL</code></p>
+      <!-- Projet 3: Bot Discord Multi-fonctions -->
+      <div class="project-card glass bot" data-category="bot">
+        <div class="project-header">
+          <div class="project-icon">
+            <i class="fab fa-discord"></i>
+          </div>
+          <div class="project-status">
+            <span class="status-badge active">Actif</span>
+          </div>
+        </div>
+        <div class="project-content">
+          <h3>Bot Discord Multi-fonctions</h3>
+          <p>Bot Discord avancé avec modération automatique, système de tickets, économie virtuelle et intégrations API multiples.</p>
+          <div class="project-features">
+            <span class="feature"><i class="fas fa-check"></i> Modération IA</span>
+            <span class="feature"><i class="fas fa-check"></i> Système tickets</span>
+            <span class="feature"><i class="fas fa-check"></i> Économie virtuelle</span>
+          </div>
+          <div class="tech-stack">
+            <span class="tech-tag">Discord.js</span>
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">PostgreSQL</span>
+            <span class="tech-tag">Redis</span>
+          </div>
+        </div>
+        <div class="project-footer">
+          <a href="#" class="project-link" target="_blank">
+            <i class="fas fa-external-link-alt"></i>
+            Voir le projet
+          </a>
+          <a href="#" class="github-link" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
       </div>
 
-      <div class="project other">
-        <h2><a href="#" target="_blank">Bot Discord Ticket</a></h2>
-        <p>Gestion des demandes support avec commandes, logs et permissions.</p>
-        <p><code>Python</code>, <code>discord.py</code></p>
+      <!-- Projet 4: Application Mobile de Fitness -->
+      <div class="project-card glass web" data-category="web">
+        <div class="project-header">
+          <div class="project-icon">
+            <i class="fas fa-dumbbell"></i>
+          </div>
+          <div class="project-status">
+            <span class="status-badge development">En développement</span>
+          </div>
+        </div>
+        <div class="project-content">
+          <h3>Application Mobile de Fitness</h3>
+          <p>App progressive de suivi fitness avec programmes personnalisés, tracking nutrition et communauté sociale intégrée.</p>
+          <div class="project-features">
+            <span class="feature"><i class="fas fa-check"></i> Programmes IA</span>
+            <span class="feature"><i class="fas fa-check"></i> Tracking nutrition</span>
+            <span class="feature"><i class="fas fa-check"></i> Réseau social</span>
+          </div>
+          <div class="tech-stack">
+            <span class="tech-tag">React Native</span>
+            <span class="tech-tag">Express.js</span>
+            <span class="tech-tag">MongoDB</span>
+            <span class="tech-tag">Socket.io</span>
+          </div>
+        </div>
+        <div class="project-footer">
+          <a href="#" class="project-link" target="_blank">
+            <i class="fas fa-external-link-alt"></i>
+            Voir le projet
+          </a>
+          <a href="#" class="github-link" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
       </div>
 
-      <div class="project other">
-        <h2><a href="#" target="_blank">Bot Discord de Gestion</a></h2>
-        <p>Produit / utilisateur / staff liés à la base MySQL de EH.</p>
-        <p><code>Python</code>, <code>MySQL</code></p>
+      <!-- Projet 5: Plateforme d'Hébergement -->
+      <div class="project-card glass system" data-category="system">
+        <div class="project-header">
+          <div class="project-icon">
+            <i class="fas fa-server"></i>
+          </div>
+          <div class="project-status">
+            <span class="status-badge active">Actif</span>
+          </div>
+        </div>
+        <div class="project-content">
+          <h3>Plateforme d'Hébergement Cloud</h3>
+          <p>Solution d'hébergement complète avec panel de contrôle, déploiement automatique et monitoring en temps réel.</p>
+          <div class="project-features">
+            <span class="feature"><i class="fas fa-check"></i> Auto-déploiement</span>
+            <span class="feature"><i class="fas fa-check"></i> Monitoring 24/7</span>
+            <span class="feature"><i class="fas fa-check"></i> Scaling auto</span>
+          </div>
+          <div class="tech-stack">
+            <span class="tech-tag">Docker</span>
+            <span class="tech-tag">Kubernetes</span>
+            <span class="tech-tag">Go</span>
+            <span class="tech-tag">Prometheus</span>
+          </div>
+        </div>
+        <div class="project-footer">
+          <a href="#" class="project-link" target="_blank">
+            <i class="fas fa-external-link-alt"></i>
+            Voir le projet
+          </a>
+          <a href="#" class="github-link" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
       </div>
 
-      <div class="project web">
-        <h2><a href="#" target="_blank">Bot de Contrôle Pterodactyl</a></h2>
-        <p>Gestion des serveurs EH via l’API Ptero (restart, logs, etc).</p>
-        <p><code>Python</code>, <code>Pterodactyl API</code></p>
+      <!-- Projet 6: Serveur Minecraft RPG -->
+      <div class="project-card glass game" data-category="game">
+        <div class="project-header">
+          <div class="project-icon">
+            <i class="fas fa-cube"></i>
+          </div>
+          <div class="project-status">
+            <span class="status-badge active">Actif</span>
+          </div>
+        </div>
+        <div class="project-content">
+          <h3>Serveur Minecraft RPG Avancé</h3>
+          <p>Serveur Minecraft avec système RPG complet, quêtes dynamiques, économie complexe et événements automatisés.</p>
+          <div class="project-features">
+            <span class="feature"><i class="fas fa-check"></i> Système RPG</span>
+            <span class="feature"><i class="fas fa-check"></i> Quêtes IA</span>
+            <span class="feature"><i class="fas fa-check"></i> Économie avancée</span>
+          </div>
+          <div class="tech-stack">
+            <span class="tech-tag">Java</span>
+            <span class="tech-tag">Spigot</span>
+            <span class="tech-tag">MySQL</span>
+            <span class="tech-tag">Redis</span>
+          </div>
+        </div>
+        <div class="project-footer">
+          <a href="#" class="project-link" target="_blank">
+            <i class="fas fa-external-link-alt"></i>
+            Voir le projet
+          </a>
+          <a href="#" class="github-link" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
       </div>
 
-      <!-- Autres -->
-      <div class="project other">
-        <h2><a href="#" target="_blank">Serveur Minecraft Eldernia</a></h2>
-        <p>RPG médiéval, map custom, plugins, lore, équipes & écosystème.</p>
-        <p><code>Paper</code>, <code>Java</code>, <code>MySQL</code></p>
+      <!-- Projet 7: API de Cryptomonnaies -->
+      <div class="project-card glass system" data-category="system">
+        <div class="project-header">
+          <div class="project-icon">
+            <i class="fab fa-bitcoin"></i>
+          </div>
+          <div class="project-status">
+            <span class="status-badge completed">Terminé</span>
+          </div>
+        </div>
+        <div class="project-content">
+          <h3>API de Trading Crypto</h3>
+          <p>API REST complète pour le trading de cryptomonnaies avec analyse technique, alertes automatiques et portfolio tracking.</p>
+          <div class="project-features">
+            <span class="feature"><i class="fas fa-check"></i> Analyse technique</span>
+            <span class="feature"><i class="fas fa-check"></i> Alertes temps réel</span>
+            <span class="feature"><i class="fas fa-check"></i> Portfolio tracking</span>
+          </div>
+          <div class="tech-stack">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">FastAPI</span>
+            <span class="tech-tag">PostgreSQL</span>
+            <span class="tech-tag">WebSocket</span>
+          </div>
+        </div>
+        <div class="project-footer">
+          <a href="#" class="project-link" target="_blank">
+            <i class="fas fa-external-link-alt"></i>
+            Voir le projet
+          </a>
+          <a href="#" class="github-link" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
       </div>
 
-      <div class="project other">
-        <h2><a href="#" target="_blank">Serveur Minecraft The Earth</a></h2>
-        <p>Géopolitique sur map terre IRL, gestion économique & events.</p>
-        <p><code>Spigot</code>, <code>Java</code>, <code>Html</code></p>
-      </div>
     </section>
   </div>
 
@@ -107,6 +405,9 @@
   </footer>
 
   <script src="../scripts/particles/particles.min.js"></script>
+  <script src="../scripts/theme-switcher.js"></script>
+  <script src="../scripts/animation.js"></script>
+  <script src="../scripts/portfolio.js"></script>
   <script>
     particlesJS("particles-js", {
       "particles": {
@@ -135,6 +436,5 @@
       "retina_detect": true
     });
   </script>
-  <script src="/scripts/portfolio.js"></script>
 </body>
 </html>

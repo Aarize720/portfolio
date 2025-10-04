@@ -8,11 +8,45 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <title>Accueil | Aarize</title>
+  <meta name="description" content="Aarize - Développeur full stack passionné. Spécialisé en Java, Node.js, HTML, CSS, JavaScript et MySQL. Fondateur d'ElythiumDev et ElythiumHeberg."/>
+
+  <meta name="keywords" content="développeur, full stack, Java, Node.js, HTML, CSS, JavaScript, MySQL, ElythiumDev, ElythiumHeberg, portfolio"/>
+
+  <meta name="author" content="Aaron LG (Aarize)"/>
+
+  <meta name="robots" content="index, follow"/>
+
+  <!-- Open Graph / Facebook -->
+
+  <meta property="og:type" content="website"/>
+
+  <meta property="og:url" content="https://aarize.dev/"/>
+
+  <meta property="og:title" content="Aarize - Développeur Full Stack"/>
+
+  <meta property="og:description" content="Développeur full stack passionné spécialisé en Java, Node.js, HTML, CSS, JavaScript et MySQL. Créateur d'expériences uniques."/>
+
+  <meta property="og:image" content="https://aarize.dev/assets/og-image.jpg"/>
+
+  <!-- Twitter -->
+
+  <meta property="twitter:card" content="summary_large_image"/>
+
+  <meta property="twitter:url" content="https://aarize.dev/"/>
+
+  <meta property="twitter:title" content="Aarize - Développeur Full Stack"/>
+
+  <meta property="twitter:description" content="Développeur full stack passionné spécialisé en Java, Node.js, HTML, CSS, JavaScript et MySQL."/>
+
+  <meta property="twitter:image" content="https://aarize.dev/assets/og-image.jpg"/>
+
+  <title>Accueil | Aarize - Développeur Full Stack</title>
 
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/styles/index.css">
+  <link rel="stylesheet" href="styles/index.css">
+
+  <link rel="stylesheet" href="styles/enhancements.css">
 
 
   <link
@@ -45,21 +79,27 @@
 
     <a href="index.html">Accueil</a>
 
-    <a href="/about/">À propos</a>
+    <a href="about/index.html">À propos</a>
 
-    <a href="/portfolio/">Portfolio</a>
+    <a href="portfolio/index.html">Portfolio</a>
 
-    <a href="/contact/">Contact</a>
+    <a href="contact/index.html">Contact</a>
 
   </nav>
 
   <!-- Hero Section -->
 
-  <div class="container glass" data-animate>
+  <div class="container glass enhanced-card" data-animate>
 
     <header>
 
       <h1><span class="dev-tag">&lt;/&gt;</span> Hello, moi c'est Aarize</h1>
+
+      <div class="status-indicator status-online">
+
+        <span>Disponible pour projets</span>
+
+      </div>
 
     </header>
 
@@ -77,25 +117,131 @@
 
       <p>Naviguez dans les différentes sections pour voir mes projets ou me contacter directement !</p>
 
+      
+
+      <!-- Statistiques rapides -->
+
+      <div class="stats-grid">
+
+        <div class="stat-item fade-in-left">
+
+          <div class="stat-number">2+</div>
+
+          <div class="stat-label">Années d'expérience</div>
+
+        </div>
+
+        <div class="stat-item fade-in-up">
+
+          <div class="stat-number">15+</div>
+
+          <div class="stat-label">Projets réalisés</div>
+
+        </div>
+
+        <div class="stat-item fade-in-right">
+
+          <div class="stat-number">100%</div>
+
+          <div class="stat-label">Satisfaction client</div>
+
+        </div>
+
+      </div>
+
     </section>
 
   </div>
 
   <!-- Projets récents -->
 
-  <div class="container glass" data-animate>
+  <div class="container glass enhanced-card" data-animate>
 
     <section>
 
-      <h2>📁 Projets récents</h2>
+      <h2><i class="fas fa-folder-open"></i> Projets récents</h2>
 
-      <p><strong>ElythiumHeberg</strong> — Hébergement Minecraft, bots Discord et sites web.</p>
+      
 
-      <p><strong>ElythiumDev</strong> — Développement sur mesure full stack.</p>
+      <div class="project-cards">
 
-      <p><strong>The Earth</strong> — Serveur Minecraft survie avec map monde réaliste.</p>
+        <div class="project-card fade-in-left">
 
-      <a href="/portfolio/" class="btn-link">→ Voir tout mon portfolio</a>
+          <div class="project-icon">🚀</div>
+
+          <h3>ElythiumHeberg</h3>
+
+          <p>Hébergement Minecraft, bots Discord et sites web.</p>
+
+          <div class="project-tech">
+
+            <span class="tech-tag">Node.js</span>
+
+            <span class="tech-tag">MySQL</span>
+
+            <span class="tech-tag">Docker</span>
+
+          </div>
+
+        </div>
+
+        
+
+        <div class="project-card fade-in-up">
+
+          <div class="project-icon">💻</div>
+
+          <h3>ElythiumDev</h3>
+
+          <p>Développement sur mesure full stack.</p>
+
+          <div class="project-tech">
+
+            <span class="tech-tag">Java</span>
+
+            <span class="tech-tag">React</span>
+
+            <span class="tech-tag">API</span>
+
+          </div>
+
+        </div>
+
+        
+
+        <div class="project-card fade-in-right">
+
+          <div class="project-icon">🌍</div>
+
+          <h3>The Earth</h3>
+
+          <p>Serveur Minecraft survie avec map monde réaliste.</p>
+
+          <div class="project-tech">
+
+            <span class="tech-tag">Spigot</span>
+
+            <span class="tech-tag">Java</span>
+
+            <span class="tech-tag">MySQL</span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      
+
+      <div class="text-center">
+
+        <a href="portfolio/index.html" class="btn-link enhanced-btn">
+
+          <i class="fas fa-arrow-right"></i> Voir tout mon portfolio
+
+        </a>
+
+      </div>
 
     </section>
 
@@ -103,15 +249,83 @@
 
   <!-- Compétences -->
 
-  <div class="container glass" data-animate>
+  <div class="container glass enhanced-card" data-animate>
 
     <section>
 
-      <h2>🧠 Mes compétences</h2>
+      <h2><i class="fas fa-brain"></i> Mes compétences</h2>
 
-      <p><code>Java</code> • <code>Node.js</code> • <code>HTML</code> • <code>CSS</code> • <code>JavaScript</code> • <code>MySQL</code></p>
+      
 
-      <p><code>Discord.js</code> • <code>Python</code> • <code>Pterodactyl API</code> • <code>Responsive Design</code></p>
+      <div class="skills-grid">
+
+        <div class="skill-category fade-in-left">
+
+          <h3><i class="fas fa-code"></i> Langages</h3>
+
+          <div class="skill-tags">
+
+            <span class="skill-tag advanced">Java</span>
+
+            <span class="skill-tag advanced">JavaScript</span>
+
+            <span class="skill-tag intermediate">Python</span>
+
+            <span class="skill-tag advanced">HTML/CSS</span>
+
+            <span class="skill-tag intermediate">C++</span>
+
+            <span class="skill-tag intermediate">C#</span>
+
+          </div>
+
+        </div>
+
+        
+
+        <div class="skill-category fade-in-up">
+
+          <h3><i class="fas fa-server"></i> Backend</h3>
+
+          <div class="skill-tags">
+
+            <span class="skill-tag advanced">Node.js</span>
+
+            <span class="skill-tag advanced">MySQL</span>
+
+            <span class="skill-tag intermediate">Docker</span>
+
+            <span class="skill-tag intermediate">API REST</span>
+
+            <span class="skill-tag beginner">MongoDB</span>
+
+          </div>
+
+        </div>
+
+        
+
+        <div class="skill-category fade-in-right">
+
+          <h3><i class="fas fa-tools"></i> Outils</h3>
+
+          <div class="skill-tags">
+
+            <span class="skill-tag advanced">Git</span>
+
+            <span class="skill-tag advanced">Discord.js</span>
+
+            <span class="skill-tag intermediate">Pterodactyl API</span>
+
+            <span class="skill-tag intermediate">WordPress</span>
+
+            <span class="skill-tag beginner">React</span>
+
+          </div>
+
+        </div>
+
+      </div>
 
     </section>
 
@@ -127,7 +341,7 @@
 
       <p>Tu as une idée de projet ou tu veux bosser avec moi ?</p>
 
-      <a href="/contact/" class="btn-link">→ Aller à la page contact</a>
+      <a href="contact/index.html" class="btn-link">→ Aller à la page contact</a>
 
     </section>
 
@@ -153,7 +367,7 @@
 
       </a>
 
-      <a href="https://github.com/aarize720" target="_blank" rel="noopener" aria-label="GitHub">
+      <a href="https://github.com/aaronlg" target="_blank" rel="noopener" aria-label="GitHub">
 
         <i class="fab fa-github"></i>
 
@@ -167,7 +381,9 @@
 
   <script src="scripts/particles/particles.min.js"></script>
 
-  <script src="/scripts/animation.js"></script>
+  <script src="scripts/animation.js"></script>
+
+  <script src="scripts/theme-switcher.js"></script>
 
   <script>
 
